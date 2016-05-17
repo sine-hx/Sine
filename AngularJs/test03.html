@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCon">
+<select ng-model="ser" ng-options="x for x in names"></select>
+    <select>
+        <option ng-repeat="x in names">{{x}}</option>
+    </select>
+</div>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCon',function($scope){
+        $scope.names=["qwe","wer","ert"]
+    })
+</script>
+</body>
+</html>

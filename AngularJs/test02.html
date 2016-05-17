@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCon">
+    <ul ng-repeat=" x in names">
+        <li>{{ x.Name +" *** "+ x.City +" *** "+ x.Country}}</li>
+    </ul>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCon',function($scope, $http){
+        $http.get("Customers_JSON.php")
+                .success(function(response) {$scope.names = response.records;});
+    });
+</script>
+</body>
+</html>

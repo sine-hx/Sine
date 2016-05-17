@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table td {
+            border: 1px solid #ccc;
+            border-spacing: 0;
+        }
+    </style>
+    <script type="text/javascript">
+
+
+
+        var otest = document.getElementById("test");
+
+        var newnode = document.createElement("li");
+
+        newnode.innerHTML="PHP";
+
+        otest.insertBefore(newnode,otest.firstChild);
+
+
+
+    </script>
+</head>
+<body>
+<ul id="test">
+    <li>表格内容</li>
+    <li>表格内容</li>
+</ul>
+
+</html>
