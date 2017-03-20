@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="http://localhost:8080/JavaScript/img/a1.jpg" data-original="http://localhost:8080/JavaScript/img/a1.jpg"/>
+<script>
+    function convertImgToBase64(url, callback, outputFormat){
+        var canvas = document.createElement('CANVAS'),
+            ctx = canvas.getContext('2d'),
+            img = new Image;
+        img.crossOrigin = 'Anonymous';
+        img.onload = function(){
+            canvas.height = img.height;
+            canvas.width = img.width;
+            ctx.drawImage(img,0,0);
+            var dataURL = canvas.toDataURL(outputFormat || 'image/png');
+            callback.call(this, dataURL);
+            canvas = null;
+        };
+        img.src = url;
+    }
+    convertImgToBase64('http://localhost:8080/JavaScript/img/a1.jpg', function(base64Img){
+        console.log(base64Img)// Base64DataURL
+    });
+</script>
+</body>
+</html>
