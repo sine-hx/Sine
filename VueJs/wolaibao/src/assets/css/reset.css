@@ -1,0 +1,189 @@
+body {
+  /*禁止字体放大*/
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+  background: #f6f6f6;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+pre, form, fieldset, input, textarea, p, blockquote, th, td, b {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  /*font-family: Heiti SC;*/
+}
+
+fieldset, img {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-weight: normal;
+  font-style: normal;
+}
+
+caption, th {
+  text-align: left;
+}
+
+abbr, acronym {
+  border: 0;
+}
+
+i {
+  font-style: normal
+}
+
+/*form*/
+/*手机浏览器表单有边框*/
+input, textarea, select, option {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+/*a*/
+a {
+  text-decoration: none;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*超链接点击有背景*/
+}
+
+/*clear*/
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*滑动选择框*/
+.policyCheck_switch {
+  width: 2rem;
+  height: .8rem;
+  display: block;
+}
+
+.policyCheck_switch_checkbox {
+  width: 2rem;
+  border-radius: 5px;
+  height: .65rem;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(90deg, #fff, #fff), linear-gradient(90deg, #cecdcd, #767776);
+  cursor: pointer;
+  position: relative;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms
+}
+
+.policyCheck_switch_checkbox:before {
+  content: ' ';
+  position: absolute;
+  width: .8rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: .65rem;
+  z-index: 1;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transform: scale(1);
+  transform: scale(1)
+}
+
+.policyCheck_switch_checkbox:after {
+  content: ' ';
+  height: .65rem;
+  width: 1rem;
+  border-radius: 4px;
+  background: #fff;
+  position: absolute;
+  z-index: 2;
+  background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#cecdcd), to(#767776)); /*谷歌*/
+  background: -o-linear-gradient(left, #cecdcd, #767776); /*Opera 11.10+*/
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms
+}
+
+.policyCheck_switch input[type=checkbox] {
+  display: none
+}
+
+.policyCheck_switch input[type=checkbox]:checked + .policyCheck_switch_checkbox:before {
+  -webkit-transform: scale(0);
+  transform: scale(0)
+}
+
+.policyCheck_switch input[type=checkbox]:checked + .policyCheck_switch_checkbox:after {
+  -webkit-transform: translateX(1rem);
+  transform: translateX(1rem);
+  background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#f13b36), to(#e80d00)); /*谷歌*/
+  background: -o-linear-gradient(left, #f13b36, #e80d00); /*Opera 11.10+*/
+}
+
+/*helpLine*/
+i.helpLine {
+  font-style: normal;
+  color: #b81b22;
+}
+
+/*errorMsg*/
+.errorMsg {
+  position: fixed;
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+  border-radius: 6px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 4rem;
+  height: 1.5rem;
+  margin: auto;
+  text-align: center;
+  padding: .2rem;
+  display: none;
+}
+
+.errorMsg div {
+  height: 1.5rem;
+  display: box;
+  /* OLD - Android 4.4- */
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -o-box;
+  /*横向两端对齐*/
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  /*垂直居中*/
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  font-size: .36rem;
+  line-height: .5rem;
+}
+
